@@ -8,7 +8,7 @@ import {
 
 export const setItemsLoading = () => {
   return {
-    type: ITEMS_LOADING,
+    // type: ITEMS_LOADING,
   };
 };
 
