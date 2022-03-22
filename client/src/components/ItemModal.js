@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
-import { addItem } from '../actions/itemActions';
+import { addItem } from '../actions/ItemActions';
 import {
   Button,
   Modal,
@@ -12,9 +12,10 @@ import {
   Input,
 } from 'reactstrap';
 
-export default function ItemModal({ addItem }) {
+function ItemModal({ addItem }) {
   const [modal, setModal] = useState(false);
   const [name, setName] = useState('');
+
   const toggle = () => {
     setModal(!modal);
   };
@@ -34,7 +35,9 @@ export default function ItemModal({ addItem }) {
 
   return (
     <div>
-      <Button>Add Item</Button>
+      <Button color="dark" style={{ marginBottom: '2rem' }} onClick={toggle}>
+        Add Item
+      </Button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Add To Shopping List</ModalHeader>
         <ModalBody>
@@ -48,8 +51,8 @@ export default function ItemModal({ addItem }) {
                 placeholder="Add Shopping Item"
                 onChange={onChange}
               />
-              <Button>
-                  Add Item
+              <Button color="dark" style={{ marginTop: '2rem' }} block>
+                Add Item
               </Button>
             </FormGroup>
           </Form>
@@ -58,3 +61,5 @@ export default function ItemModal({ addItem }) {
     </div>
   );
 }
+
+export default connect()(ItemModal);
