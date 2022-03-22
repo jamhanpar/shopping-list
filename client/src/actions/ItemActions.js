@@ -1,14 +1,10 @@
 import axios from 'axios';
-import {
-  GET_ITEMS,
-  ADD_ITEM,
-  DELETE_ITEM,
-} from '../actions/types';
+import { GET_ITEMS, ADD_ITEM, DELETE_ITEM } from '../actions/types';
 // import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING } from './types';
 
 export const setItemsLoading = () => {
   return {
-    type: ITEMS_LOADING,
+    // type: ITEMS_LOADING,
   };
 };
 
